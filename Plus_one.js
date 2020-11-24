@@ -21,25 +21,21 @@
 // Input: digits = [0]
 // Output: [1
 
-
-
-
+// digits = [1,2,9] 
 var plusOne = function(digits) {
-    let carry = 0 
-    for (let i = digits.length-1; i >= 0; i--){
-        carry = digits[i]+1 === 10 ? 1 : 0
-        if (carry === 0 ){
+    for(let i = digits.length - 1; i >= 0; i--){
+        if(digits[i] < 9){
             digits[i] += 1
-            break
+            return digits
         } else {
+            //[9,9] => [0,0] 
             digits[i] = 0
         }
     }
-    if (carry == 1){
-            digits.unshift(1);
-        }
     
-    return digits;
+    //[9,9] => [0,0] => [1,0,0]
+    digits.unshift(1)
+    return digits
 }
 
 
@@ -48,8 +44,23 @@ var plusOne = function(digits) {
 
 
 
-
-
+// var plusOne = function(digits) {
+//     let carry = 0 
+//     for (let i = digits.length-1; i >= 0; i--){
+//         carry = digits[i]+1 === 10 ? 1 : 0
+//         if (carry === 0 ){
+//             digits[i] += 1
+//             break
+//         } else {
+//             digits[i] = 0
+//         }
+//     }
+//     if (carry == 1){
+//             digits.unshift(1);
+//         }
+    
+//     return digits;
+// }
 
 
 
