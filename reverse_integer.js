@@ -69,3 +69,15 @@ var reverse = function(x) {
     
 
 console.log(reverse(x))
+
+
+// const reverse = function(x){
+//     let revNum = 0, lastDigit = 0;
+//     while (x!==0) {
+//         lastDigit = x % 10;  //reminder is the last digit
+//         x = parseInt(x/10);  //the number except for the last digit
+//         revNum = revNum * 10 + lastDigit;  //adding the last digit one at a time 
+//         if (revNum < Math.pow(-2, 31) || revNum > Math.pow(2, 31) - 1) return 0
+//     }
+//     return revNum
+// }
