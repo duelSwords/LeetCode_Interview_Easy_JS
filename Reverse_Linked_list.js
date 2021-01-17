@@ -21,22 +21,22 @@
  */
 
  //iteratively
- var reverseList = function(head) {
-    let current = head;
-    if (!current) {
-        return current;
-    }
-    let curPre = head.next;
-    current.next = null;
-    while (curPre) {
-        // save the next node
-        let tmp = curPre.next;
-        curPre.next = current;
-        current = curPre;
-        curPre = tmp;
-    }
-    return current;
-};
+//  var reverseList = function(head) {
+//     let current = head;
+//     if (!current) {
+//         return current;
+//     }
+//     let curPre = head.next;
+//     current.next = null;
+//     while (curPre) {
+//         // save the next node
+//         let tmp = curPre.next;
+//         curPre.next = current;
+//         current = curPre;
+//         curPre = tmp;
+//     }
+//     return current;
+// };
 
 
 //recursively
@@ -57,3 +57,46 @@
 //         return fun(pre, tmp);
 //     }
 // }
+
+Original
+H     T => null
+5, 6, 7 
+next -> 
+
+Reversed
+null T     H 
+     5, 6, 7 
+<- next
+
+var reverseList = function(head) {
+    //we start at 5, prev point to null
+    let prev = null
+    //create a next, set placeholder to null
+    let next = null
+    while(head !== null){
+        //reassign next, get the next value, 6 in this iteration
+        next = head.next
+        //severed the head.next, reassign it to point to prev
+        head.next = prev
+        //to move onto the next iteration, 
+        //reassign prev to be the head
+        prev = head
+        //reassign head to be next before the severed head.next. 
+        head = next  
+    }
+    //return prev, which is the new reversed head. 
+    return prev
+};
+
+
+// var reverseList = function(head) {
+//     let prev = null
+//     let next = null
+//     while(head !== null){
+//         next = head.next
+//         head.next = prev
+//         prev = head
+//         head = next  
+//     }
+//     return prev
+// };
