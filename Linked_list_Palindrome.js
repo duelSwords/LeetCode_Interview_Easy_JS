@@ -106,7 +106,7 @@ let reverse = function(head) {
 // let reverse = function(head) {
 //     let prevNode = null
 //     while(head !== null){
-//         nextNode = head.next
+//         let nextNode = head.next
 //         head.next = prevNode
 //         prevNode = head
 //         head = nextNode
