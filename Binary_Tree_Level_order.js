@@ -52,13 +52,16 @@ var levelOrder = function(root) {
         //queue length will constantly changed when we push the left and right node 
         let queueLength = queue.length;
         let currentLevel = [];
+        console.log('q', queue)
         
         //two loop, the queue loop, and the currentLevel loop
-        //the queueLength will be no more than 2, left node and right node
+        //the queueLength will be every left node and right node that is pushed into queue
         for (let i=0; i<queueLength; i++) {
             //mutating the original array, reducing the length
             //set the current node, starting from the left
             let node = queue.shift();
+            console.log('n', node)
+            console.log(queueLength)
             
             //push the current node val
             currentLevel.push(node.val);
@@ -73,3 +76,33 @@ var levelOrder = function(root) {
     }
     return result;
 };
+
+
+
+// root = [3,9,20,44,21,1,5,15,7]
+
+q [ [3,9,20,44,21,1,5,15,7] ]
+n [3,9,20,44,21,1,5,15,7]
+1
+
+q [ [9,44,21,15,7], [20,1,5] ]
+n [9,44,21,15,7]
+2
+n [20,1,5]
+2
+
+q [ [44,15,7], [21], [1], [5] ]
+n [44,15,7]
+4
+n [21]
+4
+n [1]
+4
+n [5]
+4
+
+q [ [15], [7] ]
+n [15]
+2
+n [7]
+2
