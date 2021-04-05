@@ -65,3 +65,27 @@ var preorderTraversal = function(root) {
     
     
 };
+
+
+//recursive solution 
+var preorderTraversal = function(root) {
+    let result = []
+    if(root){
+        let traversePre = node => {
+            if(!node) return
+            
+            //push the node val 
+            result.push(node.val)
+            
+            //if the left node exist, recursion 
+            if(node.left) traversePre(node.left)
+
+            //if the right node exist, recursion 
+            if(node.right) traversePre(node.right)
+
+        
+        }
+        traversePre(root)
+    }
+    return result
+};
