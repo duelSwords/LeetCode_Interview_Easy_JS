@@ -21,19 +21,17 @@
 
 var findMaxAverage = function(nums, k) {
     let sum=0;
-    let Msum=0;
-    
+
     //get the inital sum from 0 to k
     for(let i=0;i<k;i++){
         sum+=nums[i]
     }
 
-    Msum=sum
+    let Msum=sum
    
     for(let i=0;i<nums.length-k;i++){
         //update sum, add the next index val, and delete the first index val
         sum=sum+nums[k+i]-nums[i]
-
          if(sum>Msum){
              Msum=sum;
          }
