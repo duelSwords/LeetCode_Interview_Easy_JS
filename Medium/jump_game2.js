@@ -30,3 +30,22 @@ var jump = function(nums) {
     }
     return final
   }
+
+
+
+  var jump = function(nums) {
+    let maxInd = 0, curInd=0, jump=0
+    //don't include the last index because no need to jump since it already at the end
+    for(let i=0; i<nums.length-1; i++){
+        //search all the indexes from one jump to the next. To find the max 
+        maxInd = Math.max(maxInd, i+nums[i])
+        
+        //when land on the next ind, update by selecting the maxInd from bewteen jump
+        if(i === curInd){
+           jump++
+           curInd = maxInd
+         }
+    }
+    return jump
+};
+
