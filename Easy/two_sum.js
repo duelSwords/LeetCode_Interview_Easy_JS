@@ -63,4 +63,20 @@ var twoSum = function(nums, target) {
 };
 
 
+
+
+var twoSum = function(nums, target) {
+    const dict = new Map()
+    for(let i=0;i<nums.length;i++){
+        let remainder = target-nums[i]
+        if(dict.has(remainder)){
+            return [i,dict.get(remainder)]
+        }
+        dict.set(nums[i],i)
+      }
+}
+
+
+
+
 console.log(twoSum(nums,target))
