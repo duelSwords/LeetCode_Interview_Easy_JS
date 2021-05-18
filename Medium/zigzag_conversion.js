@@ -71,3 +71,28 @@
 
 
 
+
+
+
+var convert = function(s, numRows) {
+    if(numRows === 1) return s
+      
+    let array = Array(numRows).fill().map(x => [])
+    
+    let rowPos = 0
+    let downDirection = true
+    
+    for(let i=0; i<s.length; i++){
+      array[rowPos].push(s[i])
+      
+      if(downDirection){
+        rowPos++
+        if(rowPos === numRows-1) downDirection = false
+      } else{
+        rowPos--
+        if(rowPos === 0) downDirection = true
+      }
+    }
+      
+    return array.flat().join('') 
+  };
