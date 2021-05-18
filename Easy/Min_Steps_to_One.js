@@ -5,7 +5,7 @@
 
 
 // Memoization
-// Recursion 
+// Recursion - stack
 
 function minSteps(n){
     let cache = {}
@@ -46,3 +46,28 @@ function minSteps(n){
 
 
 // Tabulation 
+
+function minStepsTab(n){
+    let result= new Array(n+1)
+    result[1] = 0
+    for(let i=2; i<result.length; i++){
+        let steps = result[i-1]
+        // console.log("i",i, "steps", steps)
+    
+        if(i%3 === 0){
+            let divide3 = result[i/3]
+            // console.log("d3", divide3)
+            steps = Math.min(steps, divide3)
+        }
+    
+        if(i%2 === 0){
+            let divide2 = result[i/2]
+            // console.log("d2",divide2)
+            steps = Math.min(steps, divide2)
+        }
+
+        // console.log("updateSteps", steps)
+        result[i] = steps + 1
+    }
+    return result[n]
+}
