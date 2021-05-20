@@ -44,7 +44,7 @@
 // |1|1|1|   matrix[1][1] = matrix[0][1] + matrix[1][0]   
 // |1|1|1|]  [m-1][n-1]
 
-
+//m=row n=column
 var uniquePaths = function(m, n) {
     let matrix = []
     for(let i=0;i<m;i++){
