@@ -71,18 +71,39 @@ var hasCycle = function(head) {
 
 
 
-// var hasCycle = function(head) {
-//     if (head === null) return false
-//     let slow = head
-//     let fast = head.next
+var hasCycle = function(head) {
+    if (head === null) return false
+    let slow = head
+    let fast = head.next
     
-//     while (slow !== fast) {
-//         if (fast === null || fast.next === null) {
-//             return false
-//         }
-//         slow = slow.next
-//         fast = fast.next.next
-//     }
+    while (slow !== fast) {
+        if (fast === null || fast.next === null) {
+            return false
+        }
+        slow = slow.next
+        fast = fast.next.next
+    }
     
-//     return true
-// };
+    return true
+};
+
+
+
+
+var hasCycle = function(head) {
+    if(!head) return false
+    
+    // Set store any unqiue value, primitive or object. Set{ 1, 2, 3, ['a', 'b'], {'name': 'joe'}, 'string' }
+    let seen = new Set();
+    
+    while(head){
+        if(seen.has(head)){
+            return true
+        }
+        
+        seen.add(head)
+        head = head.next
+    }
+    
+    return false
+};
