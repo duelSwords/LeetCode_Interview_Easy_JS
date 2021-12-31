@@ -33,6 +33,7 @@ var isPalindrome = function(head) {
     // 1 2 3 2 1 null
     // when the length is odd Fast will land right before null
     // using fast.next to check next !== null
+    // find the middle with slow, when fast is at end, slow is at middle
     while(fast !== null && fast.next !== null){
         fast = fast.next.next
         slow = slow.next
