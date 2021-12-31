@@ -65,3 +65,42 @@ var inorderTraversal = function(root) {
     return result
     
 };
+
+
+var inorderTraversal = function(root) {
+    let result = []
+    
+    if(root){
+        const travel = (node) => {
+            if(!node) return 
+            if(node.left) travel(node.left)
+            result.push(node.val)
+            if(node.right) travel(node.right)
+        }
+        
+        travel(root)
+    }
+    
+    return result
+};
+
+
+var inorderTraversal = function(root) {
+    const result = [];
+    if (!root) return result;    
+    
+    let stack = [];
+    let node = root;
+    while (node || stack.length) {
+        while (node) {        
+            stack.push(node);
+            node = node.left
+        }
+
+        node = stack.pop();
+        result.push(node.val);
+        node = node.right;
+    }
+    
+    return result;
+};

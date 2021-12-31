@@ -64,3 +64,21 @@ var postorderTraversal = function(root) {
     }
     return result
 };
+
+
+
+function postorderTraversal(root){
+    let res = [];
+    let stack = [root];
+    
+    while (stack.length){
+        let node = stack.pop();
+        if (node){
+            res.push(node.val)
+            if (node.left) stack.push(node.left);
+            if (node.right) stack.push(node.right);
+        }
+    }
+    
+    return res.reverse();
+}

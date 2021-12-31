@@ -89,3 +89,29 @@ var preorderTraversal = function(root) {
     }
     return result
 };
+
+
+
+var preorderTraversal = function(root) {
+    if(!root) return []
+
+    return [root.val, ...preorderTraversal(root.left), ...preorderTraversal(root.right)];
+}
+
+
+
+var preorderTraversal = function(root) {
+    let result = [];
+    preorderTraversalRecur(root, result);
+    return result;
+};
+
+let preorderTraversalRecur = (root, result) => {
+    if (root) {
+      result.push(root.val);
+      preorderTraversalRecur(root.left, result);
+      preorderTraversalRecur(root.right, result);
+   }
+}
+
+
