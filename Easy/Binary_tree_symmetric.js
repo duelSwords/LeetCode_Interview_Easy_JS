@@ -56,6 +56,13 @@ var isSymmetric = function(root) {
     return compareNodes(root, root);
 };
 
+
+let compareNodes = (n1, n2) => {
+    if(!n1 && !n2) return true;
+    if(!n1 || !n2) return false;
+    return n1.val === n2.val && compareNodes(n1.left, n2.right) && compareNodes(n1.right, n2.left)
+}
+
 let compareNodes = (n1, n2) => {
     if(n1 === null && n2 === null)
        return true;

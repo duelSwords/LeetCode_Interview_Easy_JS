@@ -44,6 +44,8 @@
 /**
  * @param {TreeNode} root
  * @return {number[]}
+ * 
+ * postorder - left, right, root
  */
 var postorderTraversal = function(root) {
     let result = []

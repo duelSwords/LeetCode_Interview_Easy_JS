@@ -79,6 +79,31 @@ var levelOrder = function(root) {
 
 
 
+
+var levelOrder = function(root) {
+    let output = [];
+    
+    traverse(root, 0, output);
+    
+    return output;
+};
+
+const traverse = (root, level, output) => {
+    if (root === null) return;
+    
+    if (output.length === level) output.push([]);
+    
+    output[level].push(root.val);
+    
+    traverse(root.left, level + 1, output);
+    traverse(root.right, level + 1, output);
+}
+
+
+
+
+
+
 // root = [3,9,20,44,21,1,5,15,7]
 
 q [ [3,9,20,44,21,1,5,15,7] ]

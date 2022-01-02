@@ -41,6 +41,10 @@
 /**
  * @param {TreeNode} root
  * @return {number[]}
+ * 
+ * 
+ * 
+ *  inorder - left, root, right
  */
 var inorderTraversal = function(root) {
     let result = []
