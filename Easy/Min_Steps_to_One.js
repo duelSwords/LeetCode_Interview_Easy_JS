@@ -10,7 +10,7 @@
 function minSteps(n){
     let cache = {}
 
-    let tranverse(current){
+    function tranverse(current){
         //check the cache, to see if it exist
         if(current in cache){
             return cache[current]
