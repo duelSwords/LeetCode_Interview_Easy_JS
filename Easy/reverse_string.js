@@ -37,3 +37,23 @@ console.log(reverseString(s))
 //       right--;
 //     }
 //   };
+
+
+
+var reverseString = function(s) {
+    
+    //Using recursive helper
+    const helper = (index, s, length) => {
+        if(index > length){
+            return s
+        }
+        
+        let temp = s[index]
+        s[index] = s[length]
+        s[length] = temp
+        
+        helper(index+1, s, length-1)
+    }
+    
+    helper(0, s, s.length-1)
+};
