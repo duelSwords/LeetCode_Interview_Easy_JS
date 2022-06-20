@@ -26,7 +26,7 @@
 //     if (!current) {
 //         return current;
 //     }
-//     let curPre = head.next;
+//     let curPre = current.next;
 //     current.next = null;
 //     while (curPre) {
 //         // save the next node
