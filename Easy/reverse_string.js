@@ -57,3 +57,28 @@ var reverseString = function(s) {
     
     helper(0, s, s.length-1)
 };
+
+
+
+
+
+/* 
+
+var reverseString = function(s) {
+    return helper(0, s, s.length-1)
+};
+
+//Using recursive helper
+const helper = (index, s, length) => {
+    if(index > length){
+        return s
+    }
+    
+    let temp = s[index]
+    s[index] = s[length]
+    s[length] = temp
+    
+    helper(index+1, s, length-1)
+}
+
+*/
