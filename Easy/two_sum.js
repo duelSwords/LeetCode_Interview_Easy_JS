@@ -67,10 +67,11 @@ var twoSum = function(nums, target) {
 
 var twoSum = function(nums, target) {
     const dict = new Map()
+
     for(let i=0;i<nums.length;i++){
         let remainder = target-nums[i]
         if(dict.has(remainder)){
-            return [i,dict.get(remainder)]
+            return [dict.get(remainder), i]
         }
         dict.set(nums[i],i)
       }
@@ -79,4 +80,18 @@ var twoSum = function(nums, target) {
 
 
 
-console.log(twoSum(nums,target))
+var twoSum = function(nums, target) {
+    let hashMap = {}
+    
+    for(let i=0; i < nums.length; i++){
+        let number = nums[i]
+        let diff = target - number
+        
+        if(diff in hashMap){
+            return [ hashMap[diff], i]
+        }else{
+            hashMap[number] = i
+        }
+    }
+    
+};
