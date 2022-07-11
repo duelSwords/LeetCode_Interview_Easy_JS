@@ -61,7 +61,7 @@
 var mergeTwoLists = function(list1, list2) {
     if(!list1 || !list2) return list1 || list2
     
-    let merge = {val: 0}
+    let merge = {val: 0, next: null}
     let result = merge
     
     //when both list are not null
@@ -78,6 +78,8 @@ var mergeTwoLists = function(list1, list2) {
  
     //check whether list1 or list 2 is null, then add the none null list to the merge list.
     merge.next = (list1 ? list1 : list2)
+    // merge.next = list1 || list2
+
     
     return result.next
 };
